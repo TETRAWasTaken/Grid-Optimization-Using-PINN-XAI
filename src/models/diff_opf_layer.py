@@ -77,23 +77,25 @@ class DifferentiableOPFLayer(nn.Module):
 
     def forward(self, p_load: torch.Tensor, dynamic_margin: torch.Tensor) -> torch.Tensor:
         try:
+            # Primary: Interior point solver CLARABEL via diffcp (exact precision, no premature stopping)
             P_g_opt, = self.layer(
                 p_load,
                 dynamic_margin,
-                solver_args={"max_iters": 25000, "eps_abs": 1e-4, "eps_rel": 1e-4}
+                solver_args={"solve_method": "CLARABEL"}
             )
             return P_g_opt
         except Exception:
-            # Fallback for numerical edge cases with relaxed solver tolerance
+            # Fallback 1: High-precision SCS with fine tolerance
             try:
-                safe_margin = torch.clamp(dynamic_margin, min=0.2, max=1.0)
+                safe_margin = torch.clamp(dynamic_margin, min=0.2, max=1.3)
                 P_g_opt, = self.layer(
                     p_load,
                     safe_margin,
-                    solver_args={"max_iters": 35000, "eps_abs": 1e-3, "eps_rel": 1e-3}
+                    solver_args={"solve_method": "SCS", "max_iters": 25000, "eps": 1e-6}
                 )
                 return P_g_opt
             except Exception:
+                # Fallback 2: Proportional dispatch by generator capacity
                 p_max_tensor = torch.tensor(self.p_max_np, device=p_load.device, dtype=p_load.dtype)
                 total_load = torch.sum(p_load, dim=-1, keepdim=True)
                 return (p_max_tensor / torch.sum(p_max_tensor)) * total_load
