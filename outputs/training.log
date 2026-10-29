@@ -1,0 +1,161 @@
+nohup: ignoring input
+/home/CL502-27/Grid-Optimization-Using-PINN-XAI/.venv/lib/python3.10/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+=== 1. Loading IEEE14 Dataset (8760 Annual Snapshots) ===
+Loading precomputed OPF dataset from cache: data/processed/dataset_ieee14_8760.pt
+Grid Topology: 14 Buses | 5 Generators | 20 Transmission Lines
+Splits -> Train: 6132 | Val: 1314 | Test: 1314 | Batch Size: 32
+
+=== 2. Initializing Physics-Informed Pipeline with PTDF Branch Limits ===
+Executing training on compute device: CUDA
+GPU Model: NVIDIA RTX A4000
+
+=== 3. Executing Physics-Informed (PINN) Decision-Focused Training ===
+Epoch [1/10] | Step [25/192] | Loss: 0.5836 (MSE: 0.0053, Balance: 0.000 MW)
+Epoch [1/10] | Step [50/192] | Loss: 0.5814 (MSE: 0.0054, Balance: 0.000 MW)
+Epoch [1/10] | Step [75/192] | Loss: 0.5803 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [1/10] | Step [100/192] | Loss: 0.5793 (MSE: 0.0001, Balance: 0.000 MW)
+Epoch [1/10] | Step [125/192] | Loss: 0.5649 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [1/10] | Step [150/192] | Loss: 0.5704 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [1/10] | Step [175/192] | Loss: 0.5499 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [1/10] | Step [192/192] | Loss: 0.5753 (MSE: 0.0000, Balance: 0.000 MW)
+--- Epoch 1/10 Complete | Train Loss: 0.5960 | Val Loss: 0.4947 (MSE: 0.0000, Balance: 0.000 MW) ---
+Model checkpoint saved to outputs/best_model_checkpoint.pt
+Epoch [2/10] | Step [25/192] | Loss: 0.6074 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [2/10] | Step [50/192] | Loss: 0.5544 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [2/10] | Step [75/192] | Loss: 0.5729 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [2/10] | Step [100/192] | Loss: 0.5613 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [2/10] | Step [125/192] | Loss: 0.5563 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [2/10] | Step [150/192] | Loss: 0.5653 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [2/10] | Step [175/192] | Loss: 0.6052 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [2/10] | Step [192/192] | Loss: 0.5586 (MSE: 0.0000, Balance: 0.000 MW)
+--- Epoch 2/10 Complete | Train Loss: 0.5705 | Val Loss: 0.4947 (MSE: 0.0000, Balance: 0.000 MW) ---
+Epoch [3/10] | Step [25/192] | Loss: 0.5922 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [3/10] | Step [50/192] | Loss: 0.5919 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [3/10] | Step [75/192] | Loss: 0.5491 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [3/10] | Step [100/192] | Loss: 0.5872 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [3/10] | Step [125/192] | Loss: 0.5495 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [3/10] | Step [150/192] | Loss: 0.5849 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [3/10] | Step [175/192] | Loss: 0.5764 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [3/10] | Step [192/192] | Loss: 0.5423 (MSE: 0.0000, Balance: 0.000 MW)
+--- Epoch 3/10 Complete | Train Loss: 0.5705 | Val Loss: 0.4947 (MSE: 0.0000, Balance: 0.000 MW) ---
+Model checkpoint saved to outputs/best_model_checkpoint.pt
+Epoch [4/10] | Step [25/192] | Loss: 0.5681 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [4/10] | Step [50/192] | Loss: 0.5535 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [4/10] | Step [75/192] | Loss: 0.5490 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [4/10] | Step [100/192] | Loss: 0.5489 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [4/10] | Step [125/192] | Loss: 0.5263 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [4/10] | Step [150/192] | Loss: 0.5802 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [4/10] | Step [175/192] | Loss: 0.5762 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [4/10] | Step [192/192] | Loss: 0.5451 (MSE: 0.0000, Balance: 0.000 MW)
+--- Epoch 4/10 Complete | Train Loss: 0.5705 | Val Loss: 0.4947 (MSE: 0.0000, Balance: 0.000 MW) ---
+Epoch [5/10] | Step [25/192] | Loss: 0.5567 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [5/10] | Step [50/192] | Loss: 0.5605 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [5/10] | Step [75/192] | Loss: 0.5579 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [5/10] | Step [100/192] | Loss: 0.5547 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [5/10] | Step [125/192] | Loss: 0.5402 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [5/10] | Step [150/192] | Loss: 0.5613 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [5/10] | Step [175/192] | Loss: 0.5714 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [5/10] | Step [192/192] | Loss: 0.5900 (MSE: 0.0000, Balance: 0.000 MW)
+--- Epoch 5/10 Complete | Train Loss: 0.5706 | Val Loss: 0.4947 (MSE: 0.0000, Balance: 0.000 MW) ---
+Model checkpoint saved to outputs/best_model_checkpoint.pt
+Epoch [6/10] | Step [25/192] | Loss: 0.5864 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [6/10] | Step [50/192] | Loss: 0.5442 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [6/10] | Step [75/192] | Loss: 0.5655 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [6/10] | Step [100/192] | Loss: 0.5947 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [6/10] | Step [125/192] | Loss: 0.5893 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [6/10] | Step [150/192] | Loss: 0.5596 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [6/10] | Step [175/192] | Loss: 0.5514 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [6/10] | Step [192/192] | Loss: 0.6134 (MSE: 0.0000, Balance: 0.000 MW)
+--- Epoch 6/10 Complete | Train Loss: 0.5706 | Val Loss: 0.4947 (MSE: 0.0000, Balance: 0.000 MW) ---
+Epoch [7/10] | Step [25/192] | Loss: 0.5846 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [7/10] | Step [50/192] | Loss: 0.5731 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [7/10] | Step [75/192] | Loss: 0.6375 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [7/10] | Step [100/192] | Loss: 0.5907 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [7/10] | Step [125/192] | Loss: 0.5469 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [7/10] | Step [150/192] | Loss: 0.5465 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [7/10] | Step [175/192] | Loss: 0.6017 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [7/10] | Step [192/192] | Loss: 0.5554 (MSE: 0.0000, Balance: 0.000 MW)
+--- Epoch 7/10 Complete | Train Loss: 0.5705 | Val Loss: 0.4947 (MSE: 0.0000, Balance: 0.000 MW) ---
+Epoch [8/10] | Step [25/192] | Loss: 0.5830 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [8/10] | Step [50/192] | Loss: 0.5707 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [8/10] | Step [75/192] | Loss: 0.5571 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [8/10] | Step [100/192] | Loss: 0.5725 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [8/10] | Step [125/192] | Loss: 0.5920 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [8/10] | Step [150/192] | Loss: 0.5696 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [8/10] | Step [175/192] | Loss: 0.5844 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [8/10] | Step [192/192] | Loss: 0.5280 (MSE: 0.0000, Balance: 0.000 MW)
+--- Epoch 8/10 Complete | Train Loss: 0.5705 | Val Loss: 0.4947 (MSE: 0.0000, Balance: 0.000 MW) ---
+Epoch [9/10] | Step [25/192] | Loss: 0.5946 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [9/10] | Step [50/192] | Loss: 0.5501 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [9/10] | Step [75/192] | Loss: 0.5819 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [9/10] | Step [100/192] | Loss: 0.5512 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [9/10] | Step [125/192] | Loss: 0.5847 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [9/10] | Step [150/192] | Loss: 0.5494 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [9/10] | Step [175/192] | Loss: 0.5740 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [9/10] | Step [192/192] | Loss: 0.5689 (MSE: 0.0000, Balance: 0.000 MW)
+--- Epoch 9/10 Complete | Train Loss: 0.5705 | Val Loss: 0.4947 (MSE: 0.0000, Balance: 0.000 MW) ---
+Epoch [10/10] | Step [25/192] | Loss: 0.5677 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [10/10] | Step [50/192] | Loss: 0.6003 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [10/10] | Step [75/192] | Loss: 0.5634 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [10/10] | Step [100/192] | Loss: 0.5317 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [10/10] | Step [125/192] | Loss: 0.5447 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [10/10] | Step [150/192] | Loss: 0.5567 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [10/10] | Step [175/192] | Loss: 0.5954 (MSE: 0.0000, Balance: 0.000 MW)
+Epoch [10/10] | Step [192/192] | Loss: 0.6042 (MSE: 0.0000, Balance: 0.000 MW)
+--- Epoch 10/10 Complete | Train Loss: 0.5706 | Val Loss: 0.4947 (MSE: 0.0000, Balance: 0.000 MW) ---
+
+=== 4. Out-of-Sample Test Evaluation & 24-Hour Dispatch Trajectory ===
+Saved 24-hour dispatch schedule tracking to outputs/figures/dispatch_schedule_comparison.png
+
+=== 5. Extracting Data Trajectories for Symbolic Distillation (SINDy) ===
+/home/CL502-27/Grid-Optimization-Using-PINN-XAI/.venv/lib/python3.10/site-packages/pysindy/optimizers/stlsq.py:201: UserWarning: Sparsity parameter is too big (0.01) and eliminated all coefficients
+  warnings.warn(
+
+--- Distilled Symbolic Dispatch Policy Formulas ---
+P_g[0] = 1.0000 Bus 1 + 1.0000 Bus 2 + 1.0000 Bus 3 + 1.0000 Bus 4 + 1.0000 Bus 5 + 1.0000 Bus 8 + 1.0000 Bus 9 + 1.0000 Bus 10 + 1.0000 Bus 11 + 1.0000 Bus 12 + 1.0000 Bus 13
+P_g[1] = 0.0000
+P_g[2] = 0.0000
+P_g[3] = 0.0000
+P_g[4] = 0.0000
+
+=== 6. Feature Attribution Analysis (SHAP) ===
+  0%|          | 0/1 [00:00<?, ?it/s]INFO:shap:num_full_subsets = 0
+INFO:shap:remaining_weight_vector = array([0.37555887, 0.20864382, 0.15648286, 0.13412817, 0.12518629])
+INFO:shap:num_paired_subset_sizes = 5
+INFO:shap:weight_left = 0.9999999999999998
+INFO:shap:np.sum(w_aug) = 10.999999999999996
+INFO:shap:np.sum(self.kernelWeights) = 0.9999999999999999
+INFO:shap:phi = array([ -4.92221626, -15.21930669, -11.29614184,  -2.15102278,
+        -2.04085319,  -6.79908212,  -1.99730046,   0.        ,
+        -1.52994614,  -2.55194173,  -3.76927061])
+INFO:shap:np.sum(w_aug) = 10.999999999999996
+INFO:shap:np.sum(self.kernelWeights) = 0.9999999999999999
+INFO:shap:phi = array([ 0.00000000e+00, -5.80522143e-06,  0.00000000e+00, -7.23309200e-07,
+       -3.23847004e-06,  0.00000000e+00, -2.96853968e-06,  0.00000000e+00,
+       -4.10736919e-06,  0.00000000e+00, -4.38912050e-06])
+INFO:shap:np.sum(w_aug) = 10.999999999999996
+INFO:shap:np.sum(self.kernelWeights) = 0.9999999999999999
+INFO:shap:phi = array([ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+       -6.17408409e-06,  0.00000000e+00,  0.00000000e+00])
+INFO:shap:np.sum(w_aug) = 10.999999999999996
+INFO:shap:np.sum(self.kernelWeights) = 0.9999999999999999
+INFO:shap:np.sum(w_aug) = 10.999999999999996
+INFO:shap:np.sum(self.kernelWeights) = 0.9999999999999999
+100%|██████████| 1/1 [00:03<00:00,  3.11s/it]100%|██████████| 1/1 [00:03<00:00,  3.11s/it]
+SHAP attribution bar chart saved to outputs/figures/shap_attribution_gen0.png
+
+=== 7. What-If Counterfactual Explanation Generation ===
+Targeting Gen 0 Output: 213.59 MW -> Target: 181.55 MW
+Counterfactual Achieved: 213.59 MW | Max Nodal Intervention: 0.00 MW
+Saved counterfactual comparison plot to outputs/figures/counterfactual_intervention.png
+
+=== 8. Physical Verification (Power Balance & PTDF Line Compliance) ===
+Power Balance Imbalance: 0.000015 MW
+Generator Limits Feasible: True
+Line Flow Thermal Compliance: True
+Overall Grid Physical Status: PASSED (Feasible)
+Total Dispatch Operating Cost: $4499.95
+
+=== Refactored Pipeline Execution Completed Successfully ===
