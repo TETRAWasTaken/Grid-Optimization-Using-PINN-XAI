@@ -21,7 +21,8 @@ class OPFTrainer:
     ):
         self.device = torch.device(device or ("cuda" if torch.cuda.is_available() else "cpu"))
         self.model = model.to(self.device)
-        self.optimizer = optim.Adam(self.model.parameters(), lr=lr)
+        self.optimizer = optim.AdamW(self.model.parameters(), lr=lr, weight_decay=1e-4)
+        self.scheduler = optim.lr_scheduler.CosineAnnealingLR(self.optimizer, T_max=10, eta_min=1e-5)
         self.mse_loss = nn.MSELoss()
         
         self.alpha_mse = alpha_mse
@@ -100,6 +101,7 @@ class OPFTrainer:
                 )
 
         avg_loss = total_epoch_loss / num_batches
+        self.scheduler.step()
         self.history["train_loss"].append(avg_loss)
         return avg_loss
 
