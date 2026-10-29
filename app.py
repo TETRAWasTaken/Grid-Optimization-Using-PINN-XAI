@@ -1,3 +1,19 @@
+import sys
+import types
+
+# Compatibility shim for older packages expecting pkg_resources
+try:
+    import pkg_resources
+except ImportError:
+    pr = types.ModuleType("pkg_resources")
+    class DistributionNotFound(Exception): pass
+    def get_distribution(*args, **kwargs):
+        class D: version = "2.0.4"
+        return D()
+    pr.DistributionNotFound = DistributionNotFound
+    pr.get_distribution = get_distribution
+    sys.modules["pkg_resources"] = pr
+
 import time
 import torch
 import numpy as np

@@ -12,3 +12,4 @@ numpy>=2.0.0
 pyyaml>=6.0
 gradio>=4.0.0
 pandapower>=2.13.0
+setuptools
