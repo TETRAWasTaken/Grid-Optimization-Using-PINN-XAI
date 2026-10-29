@@ -36,14 +36,27 @@ class PolicySymbolicDistiller:
     ) -> list[str]:
         """
         Fits sparse linear/polynomial equations for each generator output from nodal demands.
+        Cross-version compatible across PySINDy releases.
         """
         # SINDy requires sample time t when fitting (x_dot corresponds to target dispatch)
-        self.model.fit(grid_inputs, t=1.0, x_dot=dispatch_outputs, feature_names=feature_names)
+        try:
+            self.model.fit(grid_inputs, t=1.0, x_dot=dispatch_outputs, feature_names=feature_names)
+        except TypeError:
+            # Fallback for older/newer PySINDy versions where feature_names is not accepted in .fit()
+            self.model.fit(grid_inputs, t=1.0, x_dot=dispatch_outputs)
+            if feature_names is not None:
+                self.model.feature_names = feature_names
         
         raw_eqs = self.model.equations(precision=4)
         self.equations = []
         for idx, eq in enumerate(raw_eqs):
-            formatted = f"P_g[{idx}] = {eq}"
+            # Ensure bus names are substituted if PySINDy output generic x0, x1 identifiers
+            formatted_eq = eq
+            if feature_names is not None:
+                # Replace higher indexed variables first (e.g., x10 before x1) to avoid partial substitution
+                for i in sorted(range(len(feature_names)), reverse=True):
+                    formatted_eq = formatted_eq.replace(f"x{i}", feature_names[i])
+            formatted = f"P_g[{idx}] = {formatted_eq}"
             self.equations.append(formatted)
 
         print("\n--- Distilled Symbolic Dispatch Policy Formulas ---")
