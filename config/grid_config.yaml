@@ -1,0 +1,36 @@
+# Grid Optimization & XAI Configuration
+grid:
+  benchmark: "ieee14"  # Options: "ieee14", "ac_dc_meshed"
+  num_samples: 8760
+  cache_dir: "data/processed"
+  train_split: 0.70
+  val_split: 0.15
+  test_split: 0.15
+  load_scaling_range: [0.8, 1.2]
+  renewable_capacity_factors: [0.1, 0.9]
+
+pipeline:
+  in_features: 4
+  hidden_dim: 32
+  batch_size: 32
+  learning_rate: 0.001
+  epochs: 10
+  pinn_loss:
+    alpha_mse: 1.0
+    beta_cost: 0.0001
+    gamma_balance: 1.0
+
+xai:
+  symbolic:
+    polynomial_degree: 1
+    threshold: 0.01
+  shap:
+    background_samples: 15
+    eval_samples: 50
+  counterfactuals:
+    max_delta_pct: 0.25
+    reg_weight: 0.01
+
+dashboard:
+  host: "127.0.0.1"
+  port: 7860
